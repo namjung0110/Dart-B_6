@@ -50,24 +50,30 @@
 ~~~
 
 database : 데이터의 저장소
---> [MySQL ORACLE Postgre SQL]
-    = OLTP(Online Transaction Processing): 거래를 하기 위해 사용되는 데이터 베이스
+
+ex) MySQL ORACLE Postgre SQL => OLTP
+
+ OLTP란? 
+ 
+ 거래를 하기 위해 사용되는 데이터 베이스
     
     특징
     1.데이터 무결-보류 중간 상태 x
     2.데이터의 추가,변경이 많이 발생
     3.SQL로 데이터 추출 가능하나 쿼리속도 느림
 
-    => 보완 : OLAP(Online Analytical Processing)
-       = 분석 기능 제공
+OLAP(Online Analytical Processing)란?
 
-table : 데이터가 저장된 공간
+-OLTP 보완, 분석 기능 제공 
+
 
 데이터 웨어하우스  : 데이터를 한곳에 모아 저장
---> [Database, 웹(크롤링) 등]
 
-Big Query:
-=> Google Cloud OLAP+Data Warehouse
+ex) Database, 웹(크롤링) etc.
+
+Big Query  
+
+=Google Cloud OLAP+Data Warehouse
     
     특징
     1. OLAP 도구의 일종으로 속도가 빠르나 그만큼 돈을 지불해야한다는 단점
@@ -82,20 +88,24 @@ Big Query:
 * 데이터를 활용하는 과정을 설명할 수 있다.
 * 데이터를 탐색하는 과정으로 조건과 추출, 요약을 할 수 있다. 
 ~~~
+
 데이터 활용 과정
 
-1.task 발생
-2.문제 정의
-  - 우리가 원하는 것 정의
-3.데이터 탐색
+1. task 발생
+
+2. 문제 정의
+  -우리가 원하는 것 정의
+
+3. 데이터 탐색
   -단일/다량 선택
-4. 데이터 탐색
--조건을 통한 데이터 필터링
--데이터 추출
--데이터 변환
--요약(집계)
-5.데이터 결과 검증
-  -예상과 실제가 다른 경우가 다수 존재 검증하는 과정이 필요함
+  
+  4. 데이터 탐색
+- 조건을 통한 데이터 필터링
+- 데이터 추출
+- 데이터 변환
+- 요약(집계)
+5. 데이터 결과 검증
+  -예상과 실제가 다른 경우가 다수 존재, 검증하는 과정이 필요
 
 ## 2-2. 저장된 데이터 활용하기
 
@@ -103,11 +113,15 @@ Big Query:
 ✅ 학습 목표 :
 * 데이터가 저장되는 형태를 알고 저장된 데이터를 활용할 수 있다. 
 ~~~
-확인이유:
+저장 데이터
+
+확인 이유
+
 데이터를 제대로 이해해야 올바른 데이터 추출 가능
 
-확인방법:
-ERD(Entity Relationship Diagram) : 데이터베이스 구조를 한눈에 알아보기 위해 사용(table,column 확인,key column 확인, column 의미)
+확인 방법
+
+ERD(Entity Relationship Diagram) : 데이터베이스 구조를 한눈에 알아보기 위해 사용(table,column 확인,key column 확인, column 의미 확인)
 
 ![alt text](image.png)
 
