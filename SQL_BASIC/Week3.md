@@ -337,7 +337,7 @@ HAVING
 쿼리 저징 : 쿼리가 재사용되므로 문서로 저장
 ~~~
 
-images/image copy 8.png
+namjung0110/Dart-B_6/images/image copy 8.png
 
 
 ## 3-3. 쿼리 작성 템플릿과 생산성 도구
@@ -356,7 +356,7 @@ images/image copy 8.png
 
 # 2️⃣ 학습 인증란
 
-images/인증.PNG
+namjung0110/Dart-B_6/images/인증.PNG
 
 <br><br>
 
