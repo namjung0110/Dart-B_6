@@ -120,100 +120,180 @@ FROM basic.pokemon
 ~~~
 SELECT 
    is_legendary 
-   COUNT(id) AS pokemon_cnt FROM basic.pokemon 
-   GROUP BY is_legendary
+   COUNT(id) AS pokemon_cnt 
+FROM basic.pokemon 
+GROUP BY 
+    is_legendary
 ~~~
 
 ## 문제 5
 동명이인이 있는 이름
 
 ~~~
-SELECT name COUNT(name) AS trainer_cnt FROM basic.trainer GROUP BY name HAVING trainer_cnt
+SELECT 
+  name      
+  COUNT(name) AS trainer_cnt 
+FROM basic.trainer 
+GROUP BY 
+  name 
+HAVING 
+  trainer_cnt
 ~~~
 
 ## 문제 6
 trainer 테이블에서 "Iris"트레이너의 정보를 알 수 있는 쿼리
 
 ~~~
-SELECT * FROM basic.trainer WHERE name = "Iris"
-
+SELECT 
+    * 
+FROM basic.trainer 
+WHERE 
+    name = "Iris"
 ~~~
 
 ## 문제 7
 trainer 테이블에서 "Iris" "Whitney" "Cynthia" 트레이너의 정보를 알 수 있는 쿼리 작성
 
 ~~~
-SELECT * FROM basic.trainer WHERE (name = "Iris") OR (name = "Whitney") OR (name = "Cynthia")
+SELECT 
+   * 
+FROM basic.trainer 
+WHERE 
+   (name = "Iris") 
+   OR (name = "Whitney") 
+   OR (name = "Cynthia")
 ~~~
 
 ## 문제 8
 전체 포켓몬 수?
 
 ~~~
-SELECT COUNT(id) AS pokemon_cnt FROM basic.pokemon
+SELECT 
+   COUNT(id) AS pokemon_cnt 
+FROM basic.pokemon
 ~~~
 
 ## 문제 9
 세대별로 포켓몬 수가 얼마나 되는지 알 수 있는 쿼리
 
 ~~~
-SELECT generation COUNT(id) AS pokemon_cnt FROM basic.pokemon GROUP BY generation
+SELECT 
+    generation 
+    COUNT(id) AS pokemon_cnt 
+FROM basic.pokemon 
+GROUP BY 
+    generation
 ~~~
 
 ## 문제 10
 type2가 존재하는 포켓몬의 수
 
 ~~~
-SELECT COUNT(id) AS pokemon_cnt FROM basic.pokemon WHERE type2 IS NOT NULL
+SELECT 
+   COUNT(id) AS pokemon_cnt 
+FROM basic.pokemon 
+WHERE 
+   type2 IS NOT NULL
 ~~~
 
 ## 문제 11
 type2 가 있는 포켓몬 중에 제일 많은 type1
 
 ~~~
-SELECT type1 COUNT(id) AS pokemon_cnt FROM basic.pokemoon WHERE type2 IS NOT NULL GROUP BY type1 ORDER BY pokemon_cnt DESC LIMIT 1
+SELECT 
+   type1 
+   COUNT(id) AS pokemon_cnt 
+FROM basic.pokemoon 
+WHERE 
+   type2 IS NOT NULL 
+GROUP BY 
+   type1 
+ORDER BY 
+   pokemon_cnt 
+DESC LIMIT 1
 ~~~
 
 ## 문제 12
 단일타입 포켓몬 중 많은 type1
 
 ~~~
-SELECT type1 COUNT(id) AS pokemon_cnt FROM basic.pokemon WHERE type2 IS NOT NULL GROUP BY type1 ORDER BY pokemon_cnt DESC LIMIT1
+SELECT 
+   type1 
+   COUNT(id) AS pokemon_cnt 
+FROM basic.pokemon 
+WHERE 
+   type2 IS NOT NULL 
+GROUP BY 
+   type1 
+ORDER BY 
+   pokemon_cnt 
+DESC LIMIT1
 ~~~
 
 ## 문제 13
 포켓몬의 이름에 '파'가 들어가는 포켓몬
 
 ~~~
-
+SELECT 
+   kor_name 
+FROM basic.pokemon 
+WHERE 
+   name LIKE "파%"
 ~~~
 
 ## 문제 14
 뱃지가 6개 이상인 트레이너
 
 ~~~
-
+SELECT 
+   COUNT(id) AS trainer_cnt 
+FROM basic.trainer 
+WHERE 
+   badge_count >= 6
 ~~~
 
 ## 문제 15
 트레이너가 보유한 포켓몬이 제일 많은 트레이너
 
 ~~~
-
+SELECT 
+   trianer_id 
+   COUNT(trianer_id) AS pokemon_cnt 
+FROM basic.trianer_pokemon 
+GROUP BY 
+   trainer_id
 ~~~
 
 ## 문제 16
 포켓몬을 많이 풀어준 트레이너
 
 ~~~
-
+SELECT 
+   trainer_id 
+   COUNT(pokemon_id) AS pokemon_cnt 
+FROM basic.trainer_pokemon 
+WHERE 
+   status = " Released" 
+GROUP BY 
+   trainer_id 
+ORDER BY 
+   pokemon_cnt 
+DESC LIMIT 1
 ~~~
 
 ## 문제 17
 트레이너 별로 풀어준 포켓몬의 비율이 20%가 넘는 포켓몬 트레이너
 
 ~~~
-
+SELECT 
+   COUNT IF(status = "Released") AS released_cnt 
+   COUNT(pokemon_id) AS pokemon_cnt 
+   COUNTIF(status = "Released")/COUNT(pokemon_id) As released_ratio 
+FROM basic.trainer_pokemon 
+GROUP BY 
+   trainer_id 
+HAVING 
+   released_ratio >= 0.2
 ~~~
 
 ## 2-8. 새로운 집계함수
