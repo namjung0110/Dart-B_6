@@ -356,7 +356,7 @@ namjung0110/Dart-B_6/images/image copy 8.png
 
 # 2️⃣ 학습 인증란
 
-namjung0110/Dart-B_6/images/인증.PNG
+![namjung0110/Dart-B_6/images/인증.PNG](인증.PNG)
 
 <br><br>
 
