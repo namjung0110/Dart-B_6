@@ -99,7 +99,7 @@
 
 >양쪽 기준으로 연결
 
-![alt text](image-1.png)
+![alt text](<../images/image copy 26.png>)
 
 ## 5-4. JOIN 쿼리 작성하기 
 
